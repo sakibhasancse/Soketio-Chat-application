@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const UserSchema = mongoose.Schema({
+const UserSchema = new mongoose.Schema({
     username: {
         type: String,
 
@@ -19,8 +19,8 @@ const UserSchema = mongoose.Schema({
         required: true
     },
     userImage: {
-        default: 'default.png',
-        buffer: String
+        type: Buffer,
+        default: 'default.png'
     },
     facebook: {
         default: '',
