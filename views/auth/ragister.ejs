@@ -70,29 +70,36 @@
                 <h1>
                     Register
                 </h1>
+                <%if(hasErrors){%>
+                    <div class="alert alert-danger text-center">
+                        <a href="#" data-dismiss="alert" aria-lable="close" class="close">&times;</a>
+                        <% _.forEach(messages ,function(error){%>
+                            <%= error %> <br>
+                                <% }) %>
+                    </div>
+                    <%}%>
+                        <div class="inset">
+                            <p>
+                                <label for="username">USERNAME</label>
+                                <input type="text" name="username" class="" placeholder="">
+                            </p>
 
-                <div class="inset">
-                    <p>
-                        <label for="username">USERNAME</label>
-                        <input type="text" name="username" class="" placeholder="">
-                    </p>
+                            <p>
+                                <label for="email">EMAIL ADDRESS</label>
+                                <input type="text" name="email" placeholder="" />
+                            </p>
+                            <p>
+                                <label for="password">PASSWORD</label>
+                                <input type="password" name="password" placeholder="" />
+                            </p>
 
-                    <p>
-                        <label for="email">EMAIL ADDRESS</label>
-                        <input type="text" name="email" placeholder="" />
-                    </p>
-                    <p>
-                        <label for="password">PASSWORD</label>
-                        <input type="password" name="password" placeholder="" />
-                    </p>
+                        </div>
 
-                </div>
-
-                <p class="p-container">
-                    <span><a href="/">Login</a></span>
-                    <input type="submit" class="login-log" style=" background: #3bb5ec; border: #3bb5ec;"
-                        value="Register">
-                </p>
+                        <p class="p-container">
+                            <span><a href="/">Login</a></span>
+                            <input type="submit" class="login-log" style=" background: #3bb5ec; border: #3bb5ec;"
+                                value="Register">
+                        </p>
             </form>
         </div>
     </div>

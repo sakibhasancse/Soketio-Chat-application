@@ -27,16 +27,16 @@ passport.use('local.signup', new passportLocal({
         if (user) {
             return done(null, false, req.flash('error', 'User with email already exist'))
         }
-        const { email, password, username } = req.body
-        if (!email || !password || !username) {
+        const { username } = req.body
+        if (!req.body.email || !req.body.password || !username) {
             return done(null, false, req.flash('error', 'All field are required'))
         }
-        password = bcrypt.hash(password, 12)
-
-        const newUser = new User({ email, password, username })
 
 
-
+        const newUser = new User()
+        newUser.password = newUser.encryptPassword(req.body.password)
+        newUser.email = req.body.email
+        newUser.username = req.body.username
         newUser.save((err) => {
             if (err) {
                 return done(err)
@@ -45,5 +45,7 @@ passport.use('local.signup', new passportLocal({
             return done(null, newUser)
 
         })
+
+
     })
 }))

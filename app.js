@@ -7,10 +7,11 @@ const session = require('express-session')
 const MongoStore = require('connect-mongo')(session)
 const mongoose = require('mongoose')
 var flash = require('connect-flash');
-const container = require('./container')
+const container = require('./container');
+const passport = require('passport');
 
 
-container.resolve(function (users) {
+container.resolve(function (users, _) {
     mongoose.Promise = global.Promise;
     mongoose.connect('mongodb://localhost/socketiofool', { useUnifiedTopology: true, useNewUrlParser: true })
     const app = setupExpress()
@@ -30,12 +31,13 @@ container.resolve(function (users) {
 
     function setupApp(app) {
         require('./passport/local-passport')
-        app.set(express.static('public'))
+        app.use(express.static('public'))
         app.use(cookieparser())
         app.set('view engine', 'ejs')
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
-        // app.use(validator())
+
+        app.use(validator());
         app.use(session({
             secret: 'sdfsdfas',
             resave: true,
@@ -45,6 +47,9 @@ container.resolve(function (users) {
             })
         }))
         app.use(flash())
+        app.use(passport.initialize())
+        app.use(passport.session())
+        app.locals._ = _;
     }
 
 })

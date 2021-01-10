@@ -14,6 +14,14 @@
   dependencies:
     "defer-to-connect" "^1.0.1"
 
+"@types/body-parser@*":
+  "integrity" "sha512-W98JrE0j2K78swW4ukqMleo8R7h/pFETjM2DQ90MF6XK2i4LO4W3gQ71Lt4w3bfm2EvVSyWHplECvB5sK22yFQ=="
+  "resolved" "https://registry.npmjs.org/@types/body-parser/-/body-parser-1.19.0.tgz"
+  "version" "1.19.0"
+  dependencies:
+    "@types/connect" "*"
+    "@types/node" "*"
+
 "@types/bson@*":
   "integrity" "sha512-mVRvYnTOZJz3ccpxhr3wgxVmSeiYinW+zlzQz3SXWaJmD1DuL05Jeq7nKw3SnbKmbleW5qrLG5vdyWe/A9sXhw=="
   "resolved" "https://registry.npmjs.org/@types/bson/-/bson-4.0.3.tgz"
@@ -26,6 +34,13 @@
   "resolved" "https://registry.npmjs.org/@types/component-emitter/-/component-emitter-1.2.10.tgz"
   "version" "1.2.10"
 
+"@types/connect@*":
+  "integrity" "sha512-ePPA/JuI+X0vb+gSWlPKOY0NdNAie/rPUqX2GUPpbZwiKTkSPhjXWuee47E4MtE54QVzGCQMQkAL6JhV2E1+cQ=="
+  "resolved" "https://registry.npmjs.org/@types/connect/-/connect-3.4.34.tgz"
+  "version" "3.4.34"
+  dependencies:
+    "@types/node" "*"
+
 "@types/cookie@^0.4.0":
   "integrity" "sha512-y7mImlc/rNkvCRmg8gC3/lj87S7pTUIJ6QGjwHR9WQJcFs+ZMTOaoPrkdFA/YdbuqVEmEbb5RdhVxMkAcgOnpg=="
   "resolved" "https://registry.npmjs.org/@types/cookie/-/cookie-0.4.0.tgz"
@@ -35,6 +50,29 @@
   "integrity" "sha512-zurD1ibz21BRlAOIKP8yhrxlqKx6L9VCwkB5kMiP6nZAhoF5MvC7qS1qPA7nRcr1GJolfkQC7/EAL4hdYejLtg=="
   "resolved" "https://registry.npmjs.org/@types/cors/-/cors-2.8.9.tgz"
   "version" "2.8.9"
+
+"@types/express-serve-static-core@*":
+  "integrity" "sha512-YYlVaCni5dnHc+bLZfY908IG1+x5xuibKZMGv8srKkvtul3wUuanYvpIj9GXXoWkQbaAdR+kgX46IETKUALWNQ=="
+  "resolved" "https://registry.npmjs.org/@types/express-serve-static-core/-/express-serve-static-core-4.17.17.tgz"
+  "version" "4.17.17"
+  dependencies:
+    "@types/node" "*"
+    "@types/qs" "*"
+    "@types/range-parser" "*"
+
+"@types/express@^4.0.0", "@types/express@~4.0.34":
+  "integrity" "sha512-dBUam7jEjyuEofigUXCtublUHknRZvcRgITlGsTbFgPvnTwtQUt2NgLakbsf+PsGo/Nupqr3IXCYsOpBpofyrA=="
+  "resolved" "https://registry.npmjs.org/@types/express/-/express-4.0.39.tgz"
+  "version" "4.0.39"
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "*"
+    "@types/serve-static" "*"
+
+"@types/mime@*":
+  "integrity" "sha512-Jus9s4CDbqwocc5pOAnh8ShfrnMcPHuJYzVcSUU7lrh8Ni5HuIqX3oilL86p3dlTrk0LzHRCgA/GQ7uNCw6l2Q=="
+  "resolved" "https://registry.npmjs.org/@types/mime/-/mime-2.0.3.tgz"
+  "version" "2.0.3"
 
 "@types/mongodb@^3.5.27":
   "integrity" "sha512-6YNqGP1hk5bjUFaim+QoFFuI61WjHiHE1BNeB41TA00Xd2K7zG4lcWyLLq/XtIp36uMavvS5hoAUJ+1u/GcX2Q=="
@@ -48,6 +86,24 @@
   "integrity" "sha512-UHnOPWVWV1z+VV8k6L1HhG7UbGBgIdghqF3l9Ny9ApPghbjICXkUJSd/b9gOgQfjM1r+37cipdw/HJ3F6ICEnQ=="
   "resolved" "https://registry.npmjs.org/@types/node/-/node-14.14.14.tgz"
   "version" "14.14.14"
+
+"@types/qs@*":
+  "integrity" "sha512-/JHkVHtx/REVG0VVToGRGH2+23hsYLHdyG+GrvoUGlGAd0ErauXDyvHtRI/7H7mzLm+tBCKA7pfcpkQ1lf58iQ=="
+  "resolved" "https://registry.npmjs.org/@types/qs/-/qs-6.9.5.tgz"
+  "version" "6.9.5"
+
+"@types/range-parser@*":
+  "integrity" "sha512-ewFXqrQHlFsgc09MK5jP5iR7vumV/BYayNC6PgJO2LPe8vrnNFyjQjSppfEngITi0qvfKtzFvgKymGheFM9UOA=="
+  "resolved" "https://registry.npmjs.org/@types/range-parser/-/range-parser-1.2.3.tgz"
+  "version" "1.2.3"
+
+"@types/serve-static@*":
+  "integrity" "sha512-MoJhSQreaVoL+/hurAZzIm8wafFR6ajiTM1m4A0kv6AGeVBl4r4pOV8bGFrjjq1sGxDTnCoF8i22o0/aE5XCyA=="
+  "resolved" "https://registry.npmjs.org/@types/serve-static/-/serve-static-1.13.8.tgz"
+  "version" "1.13.8"
+  dependencies:
+    "@types/mime" "*"
+    "@types/node" "*"
 
 "abbrev@1":
   "integrity" "sha512-nne9/IiQ/hzIhY6pdDnbBtz7DjPTKrY00P/zvPSm5pOFkl6xuGrGnXn/VtTNNfNtAfZ9/1RtehkszU9qcTii0Q=="
@@ -234,6 +290,11 @@
   "integrity" "sha512-ir1UPr3dkwexU7FdV8qBBbNDRUhMmIekYMFZfi+C/sLNnRESKPl23nB9b2pltqfOQNnGzsDdId90AEtG5tCx4A=="
   "resolved" "https://registry.npmjs.org/base64url/-/base64url-3.0.1.tgz"
   "version" "3.0.1"
+
+"bcrypt-nodejs@^0.0.3":
+  "integrity" "sha1-xgkX8m3CNWYVZsaBBhwwPCsohCs="
+  "resolved" "https://registry.npmjs.org/bcrypt-nodejs/-/bcrypt-nodejs-0.0.3.tgz"
+  "version" "0.0.3"
 
 "bcrypt@^5.0.0":
   "integrity" "sha512-jB0yCBl4W/kVHM2whjfyqnxTmOHkCX4kHEa5nYKSoGeYe8YrjTYTc87/6bwt1g8cmV0QrbhKriETg9jWtcREhg=="
@@ -1065,13 +1126,14 @@
     "safe-buffer" "5.2.0"
     "uid-safe" "~2.1.5"
 
-"express-validator@^6.8.0":
-  "integrity" "sha512-zEHxjly2Rx0vzJOgWJBCTk1vNNwxqp0a8S8WtKaW912oTmnQGSdh/XuuNzkt+tRBgw66z9u+ah+Sv8SH5SJyUQ=="
-  "resolved" "https://registry.npmjs.org/express-validator/-/express-validator-6.8.0.tgz"
-  "version" "6.8.0"
+"express-validator@^4.3.0":
+  "integrity" "sha512-EYU+JJ2EoLpcw+GKwbB1K8UGb/w1A70Wf3gD/zE9QScQxeSt8qad93lxGtsLwZFoiYM0EByVoSzHJnskp+eVHQ=="
+  "resolved" "https://registry.npmjs.org/express-validator/-/express-validator-4.3.0.tgz"
+  "version" "4.3.0"
   dependencies:
-    "lodash" "^4.17.20"
-    "validator" "^13.5.1"
+    "@types/express" "~4.0.34"
+    "lodash" "^4.16.0"
+    "validator" "~8.2.0"
 
 "express@^4.0.0", "express@^4.17.1":
   "integrity" "sha512-mHJ9O79RqluphRrcw2X/GTh3k9tVv8YcoyY4Kkh4WDMUYKRZUq0h1o0w2rrrxBqM7VoeUVqgb27xlEMXTnYt4g=="
@@ -1939,7 +2001,7 @@
   "resolved" "https://registry.npmjs.org/lodash.once/-/lodash.once-4.1.1.tgz"
   "version" "4.1.1"
 
-"lodash@^4.17.20":
+"lodash@^4.16.0", "lodash@^4.17.20":
   "integrity" "sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA=="
   "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz"
   "version" "4.17.20"
@@ -3459,10 +3521,10 @@
   "resolved" "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz"
   "version" "1.0.1"
 
-"validator@^13.5.1":
-  "integrity" "sha512-mD45p0rvHVBlY2Zuy3F3ESIe1h5X58GPfAtslBjY7EtTqGquZTj+VX/J4RnHWN8FKq0C9WRVt1oWAcytWRuYLQ=="
-  "resolved" "https://registry.npmjs.org/validator/-/validator-13.5.2.tgz"
-  "version" "13.5.2"
+"validator@~8.2.0":
+  "integrity" "sha512-Yw5wW34fSv5spzTXNkokD6S6/Oq92d8q/t14TqsS3fAiA1RYnxSFSIZ+CY3n6PGGRCq5HhJTSepQvFUS2QUDxA=="
+  "resolved" "https://registry.npmjs.org/validator/-/validator-8.2.0.tgz"
+  "version" "8.2.0"
 
 "vary@^1", "vary@~1.1.2":
   "integrity" "sha1-IpnwLG3tMNSllhsLn3RSShj2NPw="
