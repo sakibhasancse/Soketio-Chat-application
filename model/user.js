@@ -18,19 +18,19 @@ const UserSchema = new mongoose.Schema({
         required: true
     }, password: {
         type: String,
-        required: true,
+
         min: [6, 'password minimum 5 chr']
 
     },
     userImage: {
-        type: Buffer,
+        type: String,
         default: 'default.png'
     },
     facebook: {
         default: '',
         type: String
     },
-    fbToken: Array,
+    fbTokens: Array,
 
     google: {
         default: '',

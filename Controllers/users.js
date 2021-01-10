@@ -7,6 +7,12 @@ module.exports = function (_, passport, userValidator) {
             router.get('/', this.indexPage);
             router.get('/signup', this.getsignup);
             router.post('/signup', userValidator.signupValidator, this.postRagister);
+            router.get('/auth/facebook', this.getFacebookAuth);
+            router.get('/auth/facebook/callback', this.facebookLogin)
+            router.get('/auth/google', this.getGoogleAuth);
+            router.get('/auth/google/callback', this.googleLogin)
+
+
             router.get('/home', this.homePage);
             router.get('/login', this.getsignin);
         },
@@ -25,6 +31,28 @@ module.exports = function (_, passport, userValidator) {
             failureRedirect: '/signup',
             failureFlash: true
         }),
+        getFacebookAuth: passport.authenticate('facebook', {
+            scope: 'email'
+        })
+        ,
+        facebookLogin: passport.authenticate('facebook', {
+            successRedirect: '/home',
+            failureRedirect: '/signup',
+            failureFlash: true
+        })
+        ,
+        getGoogleAuth: passport.authenticate('google', {
+            // scope: ['https://www.googleapis.com/auth/plus.login', 'https://wwww.googleapis.com/auth/plus.profile.emails.read']
+            scope: ['profile', 'email']
+
+        })
+        ,
+        googleLogin: passport.authenticate('google', {
+            successRedirect: '/home',
+            failureRedirect: '/signup',
+            failureFlash: true
+        })
+        ,
         homePage: function name(req, res) {
             return res.render('feed/home')
         },

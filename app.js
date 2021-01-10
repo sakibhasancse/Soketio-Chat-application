@@ -9,6 +9,7 @@ const mongoose = require('mongoose')
 var flash = require('connect-flash');
 const container = require('./container');
 const passport = require('passport');
+const dotenv = require('dotenv')
 
 
 container.resolve(function (users, _) {
@@ -30,13 +31,15 @@ container.resolve(function (users, _) {
 
 
     function setupApp(app) {
+        dotenv.config({ path: './config/config.env' })
         require('./passport/local-passport')
+        require('./passport/facebook-passport')
+        require('./passport/google-passport')
         app.use(express.static('public'))
         app.use(cookieparser())
         app.set('view engine', 'ejs')
         app.use(bodyParser.json());
         app.use(bodyParser.urlencoded({ extended: true }));
-
         app.use(validator());
         app.use(session({
             secret: 'sdfsdfas',
@@ -50,6 +53,7 @@ container.resolve(function (users, _) {
         app.use(passport.initialize())
         app.use(passport.session())
         app.locals._ = _;
+
     }
 
 })

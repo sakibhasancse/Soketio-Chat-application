@@ -22,6 +22,7 @@ passport.use('local.signup', new passportLocal({
 }, (req, email, password, done) => {
     User.findOne({ email }, (err, user) => {
         if (err) {
+            console.log(err)
             return done(err)
         }
         if (user) {
@@ -39,6 +40,7 @@ passport.use('local.signup', new passportLocal({
         newUser.username = req.body.username
         newUser.save((err) => {
             if (err) {
+                console.log(err)
                 return done(err)
             }
 
