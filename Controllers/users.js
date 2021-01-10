@@ -5,8 +5,8 @@ module.exports = function (_, passport) {
 
         setRouter: function (router) {
             router.get('/', this.indexPage);
-            router.get('/ragister', this.getsignup);
-            router.post('/ragister', this.postRagister);
+            router.get('/signup', this.getsignup);
+            router.post('/signup', this.postRagister);
             router.get('/home', this.homePage);
             router.get('/login', this.getsignin);
         },
@@ -16,7 +16,7 @@ module.exports = function (_, passport) {
             return res.render('feed/index', { title: 'Chat application' })
 
         },
-        getsignup: function (params) {
+        getsignup: function (req, res) {
             return res.render('auth/ragister', { title: 'Chat application' })
         },
         postRagister: passport.authenticate('local.signup', {
@@ -24,10 +24,10 @@ module.exports = function (_, passport) {
             failureRedirect: '/signup',
             failureFlash: true
         }),
-        homePage: function name(params) {
+        homePage: function name(req, res) {
             return res.render('feed/home')
         },
-        getsignin: function (params) {
+        getsignin: function (req, res) {
             return res.render('auth/login', { title: 'Chat application' })
         }
     }
