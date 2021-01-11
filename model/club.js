@@ -2,17 +2,17 @@
 const mongoose = require('mongoose')
 
 const clubSchema = new mongoose.Schema({
-    name: {
+    club: {
         type: String,
         default: ''
     },
-    contry: {
+    country: {
         type: String,
         default: ''
     },
     image: {
-        type: String,
-        default: 'default.png'
+        type: Buffer,
+
     },
     fans: [
         {

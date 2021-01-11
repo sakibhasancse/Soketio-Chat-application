@@ -5,7 +5,9 @@ const container = dependable.container()
 const simleDependencies = [
     ['_', 'lodash'],
     ['passport', 'passport'],
-    ['formidable' ,'formidable']
+    ['formidable', 'formidable'],
+    ['async', 'async'],
+    ['Club', './model/club']
 
 ]
 simleDependencies.forEach(function (val) {

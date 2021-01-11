@@ -9,10 +9,11 @@ const mongoose = require('mongoose')
 var flash = require('connect-flash');
 const container = require('./container');
 const passport = require('passport');
-const dotenv = require('dotenv')
+const dotenv = require('dotenv');
+const { homedir } = require('os');
 
 
-container.resolve(function (users, _, admin) {
+container.resolve(function (users, _, admin, home) {
     mongoose.Promise = global.Promise;
     mongoose.connect('mongodb://localhost/socketiofool', { useUnifiedTopology: true, useNewUrlParser: true })
     const app = setupExpress()
@@ -27,6 +28,7 @@ container.resolve(function (users, _, admin) {
         const router = require("express-promise-router")();
         users.setRouting(router);
         admin.setRouting(router)
+        home.setRouting(router)
         app.use(router)
     }
 

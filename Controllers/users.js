@@ -4,7 +4,7 @@ module.exports = function (_, passport, userValidator) {
     return {
 
         setRouting: function (router) {
-            router.get('/', this.indexPage);
+
             router.get('/signup', this.getsignup);
             router.post('/signup', userValidator.signupValidator, this.postRagister);
             router.get('/auth/facebook', this.getFacebookAuth);
@@ -18,10 +18,7 @@ module.exports = function (_, passport, userValidator) {
         },
 
 
-        indexPage: function (req, res) {
-            return res.render('feed/index', { title: 'Chat application' })
 
-        },
         getsignup: function (req, res) {
             const errors = req.flash('error')
             return res.render('auth/ragister', { title: 'Chat application', messages: errors, hasErrors: errors.length > 0 })

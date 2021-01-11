@@ -1,16 +1,33 @@
 const path = require('path')
 const fs = require('fs')
 
-module.exports = function (formidable) {
+
+module.exports = function (formidable, Club) {
     return {
         setRouting: function (router) {
             router.get('/dashbord', this.getDashbord);
-            router.post('/uploadsfile', this.uploadFile)
+            router.post('/uploadsfile', this.uploadFile);
+            router.post('/dashbord', this.postDashbord);
+
         },
         getDashbord: function (req, res) {
             return res.render('admin/dashbord', { title: 'Admin Dashbord' })
 
         },
+        postDashbord: async (req, res) => {
+            const { club, country, upload } = req.body
+
+            const newclub = new Club({ club, country, image: upload })
+
+            await newclub.save((err) => {
+                if (err) {
+                    return res.send('somthing went wrong')
+                }
+                return res.redirect('/dashbord')
+            })
+
+        }
+        ,
         uploadFile: (req, res) => {
             const form = new formidable.IncomingForm()
             console.log(form)
