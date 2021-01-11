@@ -12,7 +12,7 @@ const passport = require('passport');
 const dotenv = require('dotenv')
 
 
-container.resolve(function (users, _) {
+container.resolve(function (users, _, admin) {
     mongoose.Promise = global.Promise;
     mongoose.connect('mongodb://localhost/socketiofool', { useUnifiedTopology: true, useNewUrlParser: true })
     const app = setupExpress()
@@ -25,7 +25,8 @@ container.resolve(function (users, _) {
             console.log('App listening on port 3000!');
         });
         const router = require("express-promise-router")();
-        users.setRouter(router);
+        users.setRouting(router);
+        admin.setRouting(router)
         app.use(router)
     }
 

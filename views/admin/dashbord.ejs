@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <div class="container logo-container">
+        <div class="row">
+            <div class="col-md-12">
+                <nav class="navbar" id="nav_bar" role="navigation">
+
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle navbar_icon" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <h1 class="logo-div">
+                            <a href="/">Footballkik</a>
+                        </h1>
+                    </div>
+
+
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li style="padding-right: 50px;">
+                                <h2 class="reg-div">
+                                    <a href="/">
+                                        Login
+                                    </a>
+                                </h2>
+
+                            </li>
+
+
+                            <li class="reg_link2">
+                                <h2 class="reg-div">
+                                    <a href="/signup">
+                                        Register
+                                    </a>
+                                </h2>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="main">
+        <div class="main">
+            <form action="/dashbord" method="post">
+
+
+                <div class="inset">
+                    <p>
+                        <label for="club">Club Name</label>
+                        <input type="text" name="club" class="" placeholder="">
+                    </p>
+
+                    <p>
+                        <label for="Country">Country</label>
+                        <input type="text" name="Country" placeholder="" />
+                    </p>
+                    <p>
+                        <label for="image">Upload File</label>
+                        <input type="file" id="upload-input" style="display: none;" name="Upload" placeholder="" />
+                    </p>
+
+                </div>
+
+                <p class="p-container">
+
+                    <input type="button" class="login-log upload-file" style=" background: #3bb5ec; border: #3bb5ec;"
+                        value="Upload">
+                </p>
+                <button>Add photo</button>
+
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/fontawesome.min.css"
+        integrity="sha512-kJ30H6g4NGhWopgdseRb8wTsyllFUYIx3hiUwmGAkgA9B/JbzUBDQVr2VVlWGde6sdBVOG7oU8AL35ORDuMm8g=="
+        crossorigin="anonymous" />
+    <script src="/js/upload.js"></script>
+</body>
+
+</html>

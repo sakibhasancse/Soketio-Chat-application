@@ -3,7 +3,7 @@
 module.exports = function (_, passport, userValidator) {
     return {
 
-        setRouter: function (router) {
+        setRouting: function (router) {
             router.get('/', this.indexPage);
             router.get('/signup', this.getsignup);
             router.post('/signup', userValidator.signupValidator, this.postRagister);

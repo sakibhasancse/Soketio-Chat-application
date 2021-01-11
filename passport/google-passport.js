@@ -34,9 +34,10 @@ passport.use('google', new googleStrategy({
         } else {
             const newUser = new User();
             newUser.google = profile.id;
+            newUser.username = profile.first_name;
             newUser.fullname = profile.displayName;
             newUser.email = profile.emails[0].value;
-            newUser.userImage = profile._json.image.url;
+            newUser.userImage = profile._json.image ? rofile._json.image.url : '';
             newUser.save(err => {
                 if (err) {
                     return done(err)

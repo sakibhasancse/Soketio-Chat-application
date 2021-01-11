@@ -4,7 +4,8 @@ const container = dependable.container()
 
 const simleDependencies = [
     ['_', 'lodash'],
-    ['passport', 'passport']
+    ['passport', 'passport'],
+    ['formidable' ,'formidable']
 
 ]
 simleDependencies.forEach(function (val) {
