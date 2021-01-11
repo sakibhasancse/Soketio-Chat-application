@@ -13,7 +13,7 @@ const dotenv = require('dotenv');
 const { homedir } = require('os');
 
 
-container.resolve(function (users, _, admin, home) {
+container.resolve(function (users, _, admin, home, group) {
     mongoose.Promise = global.Promise;
     mongoose.connect('mongodb://localhost/socketiofool', { useUnifiedTopology: true, useNewUrlParser: true })
     const app = setupExpress()
@@ -29,6 +29,7 @@ container.resolve(function (users, _, admin, home) {
         users.setRouting(router);
         admin.setRouting(router)
         home.setRouting(router)
+        group.setRouting(router)
         app.use(router)
     }
 
@@ -39,6 +40,7 @@ container.resolve(function (users, _, admin, home) {
         require('./passport/facebook-passport')
         require('./passport/google-passport')
         app.use(express.static('public'))
+        app.use(express.static('public/uploads'))
         app.use(cookieparser())
         app.set('view engine', 'ejs')
         app.use(bodyParser.json());

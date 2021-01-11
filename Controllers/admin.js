@@ -1,5 +1,6 @@
 const path = require('path')
 const fs = require('fs')
+const slug = require('slug')
 
 
 module.exports = function (formidable, Club) {
@@ -17,7 +18,7 @@ module.exports = function (formidable, Club) {
         postDashbord: async (req, res) => {
             const { club, country, upload } = req.body
 
-            const newclub = new Club({ club, country, image: upload })
+            const newclub = new Club({ club, country, image: upload, clubslug: slug(club) })
 
             await newclub.save((err) => {
                 if (err) {
@@ -30,7 +31,7 @@ module.exports = function (formidable, Club) {
         ,
         uploadFile: (req, res) => {
             const form = new formidable.IncomingForm()
-            console.log(form)
+
             form.uploadDir = path.join(__dirname, '../public/uploads')
             form.on('file', (files, file) => {
                 fs.rename(file.path, path.join(form.uploadDir, file.name), (err) => {

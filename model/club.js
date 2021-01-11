@@ -1,6 +1,7 @@
 
 const mongoose = require('mongoose')
 
+
 const clubSchema = new mongoose.Schema({
     club: {
         type: String,
@@ -11,8 +12,11 @@ const clubSchema = new mongoose.Schema({
         default: ''
     },
     image: {
-        type: Buffer,
+        type: String,
 
+    },
+    clubslug: {
+        type: String
     },
     fans: [
         {
@@ -27,5 +31,7 @@ const clubSchema = new mongoose.Schema({
     ]
 
 })
+
+
 
 module.exports = mongoose.model('Clubs', clubSchema)
