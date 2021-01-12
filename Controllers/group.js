@@ -6,7 +6,8 @@ module.exports = function () {
 
         },
         getGroup: function (req, res) {
-            return res.render('groupchat/group', { title: `Group - ${req.params.groupname}` })
+            const name = req.params.groupname
+            return res.render('groupchat/group', { title: `Group - ${name}`, name: req.user, groupname: name })
 
         }
     }

@@ -93,11 +93,43 @@
                                     </div>
 
                                     <div class="chat_area">
+                                        <ul id="messages" class="list-unstyled">
+                                            <!-- <li class="left">
+                                                <span class="chat-img1 pull-left">
+                                                    <img src="http://placehold.it/300x300" class="img-circle" alt="">
+                                                </span>
+                                                <div class="chat-body1">
+                                                    <span class="chat-name">
+                                                        Username
+                                                    </span>
+                                                    <br>
+                                                    Message body
+                                                </div>
+                                            </li> -->
 
+                                        </ul>
+
+                                        <script id="message-template" type="test/template">
+                                            <li class="left">
+                                                <span class="chat-img1 pull-left">
+                                                    <img src="http://placehold.it/300x300" class="img-circle" alt="">
+                                                </span>
+                                                <div class="chat-body1">
+                                                    <span class="chat-name">
+                                                        {{sender}}
+                                                    </span>
+                                                    <br>
+                                                    {{text}}
+                                                </div>
+                                            </li>
+                                        </script>
                                     </div>
 
                                     <div class="message_write">
                                         <form action="#" id="message-form" method="post">
+                                            <input type="hidden" id="groupName" name="groupname" value="<%=groupname%>">
+                                            <input type="hidden" id="nameSender" name="name"
+                                                value="<%=name.name || name.fullname%>">
 
                                             <textarea class="form-control" name="message" id="msg"
                                                 placeholder="Type a message"></textarea>
@@ -185,6 +217,9 @@
                 crossorigin="anonymous"></script>
             <script src="/socket.io/socket.io.js"></script>
             <script src="/js/groupchat.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/4.1.0/mustache.js"
+                integrity="sha512-SDpqS2G7Z70bGQSl26nhAdQj9YJoQqMOJVBVqE1EyEaAAzdvLFNZ0R06FzBu+E8xTcmbd2dBhvBJuJrbEUiKqA=="
+                crossorigin="anonymous"></script>
     </body>
 
     </html>

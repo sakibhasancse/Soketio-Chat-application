@@ -113,6 +113,7 @@ h3 {
 
     .chat_area li {
         padding: 14px 14px 0;
+        list-style: none;
     }
 
         .chat_area li .chat-img1 img {
@@ -126,6 +127,12 @@ h3 {
 
 .chat_area li:last-child {
     padding-bottom: 10px;
+}
+
+.chat-name{
+    font-size: 17px;
+    font-weight: 600;
+    color: #4aa1f3;
 }
 
 .message_write {
