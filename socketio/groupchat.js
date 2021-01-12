@@ -1,8 +1,11 @@
-module.exports = function (io) {
+module.exports = function (io, Users) {
+    const users = new Users()
     io.on('connection', (socket) => {
         console.log('User Connected')
         socket.on('join', (params, callback) => {
             socket.join(params.room)
+            users.AddUserData(socket.id, params.name, params.room)
+            console.log(users)
             callback()
         })
         socket.on('createMessage', (message, callback) => {

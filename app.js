@@ -12,6 +12,7 @@ const passport = require('passport');
 const dotenv = require('dotenv');
 const { homedir } = require('os');
 const socket = require('socket.io')
+const { Users } = require('./helpers/UsersClass')
 
 
 container.resolve(function (users, _, admin, home, group) {
@@ -27,7 +28,7 @@ container.resolve(function (users, _, admin, home, group) {
             console.log('App listening on port 3000!');
         });
         setupApp(app)
-        require('./socketio/groupchat')(io)
+        require('./socketio/groupchat')(io, Users)
         const router = require("express-promise-router")();
         users.setRouting(router);
         admin.setRouting(router)

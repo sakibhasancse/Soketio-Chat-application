@@ -7,7 +7,8 @@ $(document).ready(function () {
     socket.on('connect', () => {
         console.log('yeah User Connected')
         var params = {
-            room: room
+            room: room,
+            sender: fromName
         }
         socket.emit('join', params, function () {
             console.log('User has joined this channel')
