@@ -13,7 +13,7 @@ module.exports = function (_, passport, userValidator) {
             router.get('/auth/google/callback', this.googleLogin)
 
 
-            router.get('/home', this.homePage);
+            // router.get('/home', this.homePage);
             router.get('/login', this.getsignin);
         },
 
@@ -51,7 +51,7 @@ module.exports = function (_, passport, userValidator) {
         })
         ,
         homePage: function name(req, res) {
-            return res.render('feed/home')
+            return res.render('feed/home', { title: 'Home Page' })
         },
         getsignin: function (req, res) {
             return res.render('auth/login', { title: 'Chat application' })

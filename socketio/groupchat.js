@@ -4,8 +4,10 @@ module.exports = function (io, Users) {
         console.log('User Connected')
         socket.on('join', (params, callback) => {
             socket.join(params.room)
-            users.AddUserData(socket.id, params.name, params.room)
-            console.log(users)
+            users.AddUserData(socket.id, params.sender, params.room)
+            console.log('us', params)
+
+            io.to(params.room).emit('UserList', users.GetUsersList(params.room))
             callback()
         })
         socket.on('createMessage', (message, callback) => {

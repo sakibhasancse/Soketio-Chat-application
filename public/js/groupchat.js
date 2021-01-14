@@ -14,6 +14,16 @@ $(document).ready(function () {
             console.log('User has joined this channel')
         })
     })
+
+    socket.on('UserList', (user) => {
+
+        var ol = $('<ol></ol>')
+
+        for (var i = 0; i < user.length; i++) {
+            ol.append('<p>' + user[i] + '</p>')
+        }
+        $('#users').html(ol)
+    })
     socket.on('newMessage', function (data) {
         var template = $('#message-template').html()
         var message = Mustache.render(template, {

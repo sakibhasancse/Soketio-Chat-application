@@ -4,7 +4,7 @@ const { response } = require("express")
 module.exports = function (async, Club, _) {
     return {
         setRouting: function (router) {
-            router.get('/', this.getHome)
+            router.get('/home', this.getHome)
         },
         getHome: async (req, res) => {
 
@@ -18,7 +18,7 @@ module.exports = function (async, Club, _) {
                 ], (err, result2) => {
 
                     result2 = _.sortBy(result2, '_id')
-
+                    console.log(result2)
                     return res.render('feed/home', { title: 'Chat application', data: result, data2: result2 })
                 })
 
